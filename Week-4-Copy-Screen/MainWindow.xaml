@@ -1,0 +1,179 @@
+﻿<Window x:Class="Week_4_Copy_Screen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Week_4_Copy_Screen"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1050">
+    
+    
+        <Window.Resources>
+            <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="FontSize" Value="17" />
+            </Style>
+            
+            <Style TargetType="{x:Type Label}" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource BaseStyle}" />
+            
+            <Style TargetType="ComboBoxItem">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+            </Style>
+        </Window.Resources>    
+    
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="resources/background.png" />
+        </Grid.Background>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.8*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0" Background="#000">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            
+            <Image Grid.Row="1" HorizontalAlignment="Center" Source="resources/icons/settings_icon.png" />
+            <Rectangle Grid.Row="1" HorizontalAlignment="Right" Fill="Pink" Stroke="Pink" Width="4" />
+
+            <Image Grid.Row="3" Source="resources/icons/screen_icon.png" />
+            <Image Grid.Row="5" Source="resources/icons/circle_icon.png" />
+            <Image Grid.Row="7" Source="resources/icons/audio_icon.png" />
+            <Image Grid.Row="9" Source="resources/icons/personalisation_icon.png" />
+            <Image Grid.Row="11" Source="resources/icons/gaming_icon.png" />
+            <Image Grid.Row="13" Source="resources/icons/pencil_icon.png" />
+            <Image Grid.Row="15" Source="resources/icons/world_icon.png" />
+            <Image Grid.Row="17" Source="resources/icons/toolbox_icon.png" />
+        </Grid>
+        
+        <Grid Grid.Column="1" Background="{DynamicResource WindowBackground}">
+            <Grid.Resources>
+                <SolidColorBrush x:Key="WindowBackground" Color="#000" Opacity="0.5" />
+            </Grid.Resources>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.8*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="0.8*" />
+                    <RowDefinition Height="1.3*" />
+                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="0.6*" />
+                    <RowDefinition Height="2.3*" />
+                    <RowDefinition Height="0.6*" />
+                    <RowDefinition Height="2.3*" />
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+                    <Label HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="35">Options</Label>
+                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Pink">Change the way osu! behaves</Label>
+                </Grid>
+                
+                <StackPanel Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Image Source="resources/icons/search_icon.png" />
+                    <TextBox Background="Transparent" BorderBrush="Transparent" FontSize="25">Type to search!</TextBox>
+                </StackPanel>
+                
+                <Label Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Foreground="Aqua" FontSize="35" FontFamily="Montserrat">
+                    GENERAL
+                </Label>
+                
+                <Border Grid.Row="5" Grid.Column="1" BorderThickness="1 0 0 0 " BorderBrush="Gray">
+                    <StackPanel Width="100000">
+                        <Label FontWeight="Bold">SIGN IN</Label>
+                        <Label >Logged in as Tais993</Label>
+                    </StackPanel>
+                </Border>
+                
+                <Border Grid.Row="7" Grid.Column="1" BorderThickness="1 0 0 0 " BorderBrush="Gray">
+                    <StackPanel>
+                        <Label FontWeight="Bold">LANGUAGE</Label>
+
+                        <WrapPanel>
+                            <Label>Select Language: </Label>
+                            <ComboBox>
+                                <ComboBox.Items>
+                                    <Label>English</Label>
+                                    <Label>Dutch</Label>
+                                    <Label>Russian</Label>
+                                </ComboBox.Items>
+                            </ComboBox>
+                        </WrapPanel>
+                        
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <RadioButton HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Label Grid.Row="0" Grid.Column="1">Prefer metadata in original language</Label>
+                        
+                            <RadioButton Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Label Grid.Row="1" Grid.Column="1">Use alternative font for chat display</Label>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                
+                <Border Grid.Row="9" Grid.Column="1" BorderThickness="1 0 0 0 " BorderBrush="Gray">
+                    <StackPanel>
+                        <Label FontWeight="Bold">UPDATES</Label>
+                        
+                        <WrapPanel>
+                            <Label>Release stream: </Label>
+                            <ComboBox>
+                                <ComboBox.Items>
+                                    <Label>Stable</Label>
+                                    <Label>Cutting-Edge</Label>
+                                </ComboBox.Items>
+                            </ComboBox>
+                        </WrapPanel>
+                        
+                        <Label>Your osu! is up-to-date!</Label>
+                        
+                        <Button Background="CornflowerBlue">
+                            Open osu! folder
+                        </Button>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
